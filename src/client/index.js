@@ -1,10 +1,10 @@
-import React from "react";
-import { BrowserRouter } from "react-router-dom";
-import { hydrate } from "react-dom";
-import { Provider } from "react-redux";
-import configureStore from "../common/store/configureStore";
-import { loadableReady } from "@loadable/component";
-import App from "../common/containers/App";
+import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import { hydrate } from 'react-dom';
+import { Provider } from 'react-redux';
+import { loadableReady } from '@loadable/component';
+import configureStore from '../common/store/configureStore';
+import App from '../common/containers/App';
 
 const store = configureStore(window.__PRELOADED_STATE__);
 
@@ -17,7 +17,7 @@ loadableReady().then(() => {
         <App />
       </BrowserRouter>
     </Provider>,
-    document.getElementById("root")
+    document.getElementById('root'),
   );
 });
 

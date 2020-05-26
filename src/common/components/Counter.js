@@ -1,23 +1,26 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
-import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
-import * as CounterActions from "../actions";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as CounterActions from '../actions';
 
-const Counter = ({
-  increment,
-  incrementIfOdd,
-  incrementAsync,
-  decrement,
-  counter,
-}) => (
+const Counter = ({ increment, incrementIfOdd, incrementAsync, decrement, counter }) => (
   <>
     <p>
-      Clicked: {counter} times <button onClick={increment}>+</button>{" "}
-      <button onClick={decrement}>-</button>{" "}
-      <button onClick={incrementIfOdd}>Increment if odd</button>{" "}
-      <button onClick={() => incrementAsync()}>Increment async</button>
+      Clicked: {counter} times{' '}
+      <button type="button" onClick={increment}>
+        +
+      </button>{' '}
+      <button type="button" onClick={decrement}>
+        -
+      </button>{' '}
+      <button type="button" onClick={incrementIfOdd}>
+        Increment if odd
+      </button>{' '}
+      <button type="button" onClick={() => incrementAsync()}>
+        Increment async
+      </button>
     </p>
     <p className="Home-intro">
       <Link to="/about">About us</Link>

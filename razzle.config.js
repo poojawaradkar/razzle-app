@@ -1,14 +1,14 @@
-const LoadableWebpackPlugin = require("@loadable/webpack-plugin");
-const path = require("path");
+const LoadableWebpackPlugin = require('@loadable/webpack-plugin');
+const path = require('path');
 
 module.exports = {
-  modify: (defaultConfig, { target, dev }, webpack) => {
+  modify: (defaultConfig, { target }) => {
     const config = defaultConfig;
 
     // add loadable webpack plugin only
     // when we are building the client bundle
-    if (target === "web") {
-      const filename = path.resolve(__dirname, "build");
+    if (target === 'web') {
+      const filename = path.resolve(__dirname, 'build');
 
       // saving stats file to build folder
       // without this, stats files will go into
@@ -17,11 +17,11 @@ module.exports = {
         new LoadableWebpackPlugin({
           outputAsset: false,
           writeToDisk: { filename },
-        })
+        }),
       );
     }
-    if (target === "server") {
-      console.log("server side ");
+    if (target === 'server') {
+      console.log('server side ');
     }
     return config;
   },

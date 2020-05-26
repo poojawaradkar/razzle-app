@@ -1,24 +1,22 @@
-import App from "../common/containers/App";
-import { Provider } from "react-redux";
-import React from "react";
-import { StaticRouter } from "react-router-dom";
-import configureStore from "../common/store/configureStore";
-import express from "express";
-import { fetchCounter } from "../common/api/counter";
-import qs from "qs";
-import { renderToString } from "react-dom/server";
-import serialize from "serialize-javascript";
-import { ChunkExtractor, ChunkExtractorManager } from "@loadable/server";
-import path from "path";
-
-const assets = require(process.env.RAZZLE_ASSETS_MANIFEST);
+import { Provider } from 'react-redux';
+import React from 'react';
+import { StaticRouter } from 'react-router-dom';
+import express from 'express';
+import qs from 'qs';
+import { renderToString } from 'react-dom/server';
+import serialize from 'serialize-javascript';
+import { ChunkExtractor, ChunkExtractorManager } from '@loadable/server';
+import path from 'path';
+import fetchCounter from '../common/api/counter';
+import configureStore from '../common/store/configureStore';
+import App from '../common/containers/App';
 
 const server = express();
 
 server
-  .disable("x-powered-by")
+  .disable('x-powered-by')
   .use(express.static(process.env.RAZZLE_PUBLIC_DIR))
-  .get("/*", (req, res) => {
+  .get('/*', (req, res) => {
     fetchCounter((apiResult) => {
       // Read the counter from the request, if provided
       const params = qs.parse(req.query);
@@ -31,9 +29,9 @@ server
       const store = configureStore(preloadedState);
       const context = {};
       const extractor = new ChunkExtractor({
-        statsFile: path.resolve("build/loadable-stats.json"),
+        statsFile: path.resolve('build/loadable-stats.json'),
         // razzle client bundle entrypoint is client.js
-        entrypoints: ["client"],
+        entrypoints: ['client'],
       });
       // Render the component to a string
       const markup = renderToString(
@@ -43,7 +41,7 @@ server
               <App />
             </StaticRouter>
           </Provider>
-        </ChunkExtractorManager>
+        </ChunkExtractorManager>,
       );
 
       // collect script tags
@@ -67,7 +65,7 @@ server
         <meta name="viewport" content="width=device-width, initial-scale=1">
         ${linkTags}
         ${styleTags}
-        
+
     </head>
     <body>
         <div id="root">${markup}</div>
