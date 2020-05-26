@@ -9,7 +9,7 @@ const Counter = loadable(() => import("../components/Counter"));
 const About = loadable(() => import("../components/About"));
 
 const App = () => {
-  const a = 'a';
+  const a = 'ajskd';
     const a = '5';
   return (
     <>
