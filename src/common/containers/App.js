@@ -10,7 +10,7 @@ const About = loadable(() => import("../components/About"));
 
 const App = () => {
   const a = 'a';
-    const a = 'b';
+    const a = '5';
   return (
     <>
       <div className={styles.hello}>Welcome to Razzle.</div>
