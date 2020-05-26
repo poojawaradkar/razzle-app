@@ -9,9 +9,12 @@ const Counter = loadable(() => import("../components/Counter"));
 const About = loadable(() => import("../components/About"));
 
 const App = () => {
+  const a = 'a';
+    const a = 'b';
   return (
     <>
       <div className={styles.hello}>Welcome to Razzle.</div>
+          <p>jdfhskjd</p>
       <Switch>
         <Route exact path="/" component={Counter} />
         <Route exact path="/about" component={About} />
