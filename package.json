@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
-    "start": "razzle start",
-    "build": "razzle build",
+    "start": "razzle start  --type=spa",
+    "build": "razzle build --type=spa",
     "fix:other": "yarn prettier --write",
     "fix:code": "yarn test:code --fix",
     "fix": "yarn fix:code && yarn fix:other",
