@@ -1,20 +1,24 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
-
-import loadable from '@loadable/component';
+import { renderRoutes } from 'react-router-config';
+import { Link } from 'react-router-dom';
+import Routes from '../Routes';
 import './App.css';
 import styles from './app.module.css';
 
-const Counter = loadable(() => import('../components/Counter'));
-const About = loadable(() => import('../components/About'));
 
 const App = () => (
   <>
     <div className={styles.hello}>Welcome to Razzle.</div>
-    <Switch>
-      <Route exact path="/" component={Counter} />
-      <Route exact path="/about" component={About} />
-    </Switch>
+    <p>
+      <Link to="/about">About us</Link>
+    </p>
+    <p>
+      <Link to="/counter">Counter</Link>
+    </p>
+    <p>
+      <Link to="/notfound">No match</Link>
+    </p>
+    <div>{renderRoutes(Routes)}</div>
   </>
 );
 

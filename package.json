@@ -3,16 +3,19 @@
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
-    "start": "razzle start  --type=spa",
-    "build": "razzle build --type=spa",
+    "start-spa": "razzle start  --type=spa",
+    "build-spa": "razzle build --type=spa",
+    "start": "razzle start",
+    "build": "razzle build",
+    "start-spa:prod": "serve -s build/public",
+    "start:prod": "NODE_ENV=production node build/server.js",
     "fix:other": "yarn prettier --write",
     "fix:code": "yarn test:code --fix",
     "fix": "yarn fix:code ",
     "prettier": "prettier \"**/*.{json,md,scss,yaml,yml}\"",
     "test:other": "yarn prettier --list-different",
     "test:code": "eslint --ignore-path .gitignore --ext .js,.jsx .",
-    "test": "yarn test:other && yarn test:code",
-    "start:prod": "NODE_ENV=production node build/server.js"
+    "test": "yarn test:other && yarn test:code"
   },
   "dependencies": {
     "@loadable/component": "^5.12.0",
@@ -23,6 +26,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.0",
+    "react-router-config": "^5.1.1",
     "react-router-dom": "^5.2.0",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",

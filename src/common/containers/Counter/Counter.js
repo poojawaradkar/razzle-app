@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as CounterActions from '../actions';
+import * as CounterActions from '../../actions';
 
 const Counter = ({
   increment, incrementIfOdd, incrementAsync, decrement, counter
@@ -31,9 +30,6 @@ const Counter = ({
       <button type="button" onClick={() => incrementAsync()}>
         Increment async
       </button>
-    </p>
-    <p className="Home-intro">
-      <Link to="/about">About us</Link>
     </p>
   </>
 );
