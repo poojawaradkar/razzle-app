@@ -1,16 +1,25 @@
-import { SET_COUNTER, INCREMENT_COUNTER, DECREMENT_COUNTER } from '../actions';
+import { action, thunk } from 'easy-peasy';
 
-const counter = (state = 0, action) => {
-  switch (action.type) {
-    case SET_COUNTER:
-      return action.payload;
-    case INCREMENT_COUNTER:
-      return state + 1;
-    case DECREMENT_COUNTER:
-      return state - 1;
-    default:
-      return state;
-  }
+export default {
+  count: 0,
+  // actions
+  increment: action(state => {
+    state.count += 1;
+  }),
+  decrement: action(state => {
+    state.count -= 1;
+  }),
+
+  // thunks
+  incrementIfOdd: thunk((actions, payload, { getState }) => {
+    const { count } = getState().count;
+    if (count % 2 === 0) {
+      return;
+    }
+    // return dispatch(actions.increment());
+    actions.increment();
+  }),
+  incrementAsync: thunk((actions, delay = 1000) => {
+    setTimeout(() => actions.increment(), delay);
+  }),
 };
-
-export default counter;

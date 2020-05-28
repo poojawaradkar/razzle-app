@@ -1,8 +1,99 @@
 body {
+  font-family: Nunito;
+  font-weight: 400;
   margin: 0;
-  padding: 0;
-  font-family: sans-serif;
 }
 .hello {
   font-size: 2rem;
+}
+body {
+  font-family: Nunito;
+  font-weight: 400;
+  margin: 0;
+}
+.root-container {
+  max-width: 1366px;
+  margin: auto;
+}
+.articles-holder {
+  align-items: center;
+  animation: rolling 30s ease infinite;
+  background-image: linear-gradient(238deg, #9952c8, #1874d5);
+  background-size: 300% 300%;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 120px;
+  padding: 15px;
+  text-align: center;
+}
+.navbar-links {
+  align-items: center;
+  background-color: #0003;
+  border-radius: 5px;
+  color: #fff;
+  display: inline-flex;
+  flex-direction: column;
+  height: 180px;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), color 0s;
+  width: 180px;
+  &:hover,
+  &.selected-link {
+    background-color: #fff;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+    color: #9952c8;
+    transform: scale(1.1);
+  }
+}
+a {
+  color: inherit;
+}
+.navbar-holder {
+  display: grid;
+  grid-gap: 20px;
+  justify-content: center;
+  grid-template-columns: repeat(5, 1fr);
+  margin-top: 30px;
+}
+@keyframes rolling {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@media (max-width: 992px) {
+  .navbar-holder {
+    overflow-x: auto;
+    overflow-y: hidden;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    margin-left: -15px;
+    margin-right: -15px;
+    &::-webkit-scrollbar {
+      display: none;
+      height: 0;
+    }
+  }
+  .navbar-links {
+    width: auto;
+    height: auto;
+    min-width: 80px;
+    padding: 5px 10px;
+    margin-right: 10px;
+    &:hover,
+    &.selected-link {
+      transform: none;
+      box-shadow: none;
+    }
+  }
 }

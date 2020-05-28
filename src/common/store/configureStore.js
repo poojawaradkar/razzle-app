@@ -1,9 +1,10 @@
-import { createStore, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
-import rootReducer from '../reducers';
+import { createStore } from 'easy-peasy';
+import reducers from '../reducers';
 
-const configureStore = preloadedState => {
-  const store = createStore(rootReducer, preloadedState, applyMiddleware(thunk));
+const configureStore = (preloadedState = {}) => {
+  const store = createStore(reducers, {
+    initialState: preloadedState,
+  });
 
   if (module.hot) {
     // Enable Webpack hot module replacement for reducers

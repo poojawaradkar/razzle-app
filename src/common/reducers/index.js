@@ -1,8 +1,11 @@
-import { combineReducers } from 'redux';
+// import { combineReducers } from 'redux';
+import { reducer } from 'easy-peasy';
 import counter from './counter';
+import usersReducer from './usersReducer';
 
-const rootReducer = combineReducers({
-  counter,
-});
+const model = {
+  articles: reducer(usersReducer),
+  counter: reducer(counter)
+};
 
-export default rootReducer;
+export default model;

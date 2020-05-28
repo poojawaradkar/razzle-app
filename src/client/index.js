@@ -1,36 +1,28 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { hydrate } from 'react-dom';
-import { Provider } from 'react-redux';
 import { loadableReady } from '@loadable/component';
+import { StoreProvider } from 'easy-peasy';
 import configureStore from '../common/store/configureStore';
 import App from '../common/containers/App';
 
-const store = configureStore(window.__PRELOADED_STATE__);
+const state = window.__PRELOADED_STATE__;
+delete window.__PRELOADED_STATE__;
 
+const store = configureStore(state);
 // Load all components needed before rendering
 
 loadableReady().then(() => {
   hydrate(
-    <Provider store={store}>
+    <StoreProvider store={store}>
       <BrowserRouter>
         <App />
       </BrowserRouter>
-    </Provider>,
+    </StoreProvider>,
     document.getElementById('root'),
   );
 });
 
-// if (module.hot) {
-//   module.hot.accept("../common/containers/App", () => {
-//     hydrate(
-//       <Provider store={store}>
-//         <App />
-//       </Provider>,
-//       document.getElementById("root")
-//     );
-//   });
-// }
 if (module.hot) {
   module.hot.accept();
 }
