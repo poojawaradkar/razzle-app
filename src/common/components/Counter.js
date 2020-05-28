@@ -1,23 +1,23 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import * as CounterActions from '../actions';
+import React from "react";
+import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import * as CounterActions from "../actions";
 
 const Counter = ({ increment, incrementIfOdd, incrementAsync, decrement, counter }) => (
   <>
     <p>
-      Clicked: {counter} times{' '}
+      Clicked: {counter} times{" "}
       <button type="button" onClick={increment}>
         +
-      </button>{' '}
+      </button>{" "}
       <button type="button" onClick={decrement}>
         -
-      </button>{' '}
+      </button>{" "}
       <button type="button" onClick={incrementIfOdd}>
         Increment if odd
-      </button>{' '}
+      </button>{" "}
       <button type="button" onClick={() => incrementAsync()}>
         Increment async
       </button>
