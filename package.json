@@ -7,7 +7,7 @@
     "build": "razzle build --type=spa",
     "fix:other": "yarn prettier --write",
     "fix:code": "yarn test:code --fix",
-    "fix": "yarn fix:code && yarn fix:other",
+    "fix": "yarn fix:code ",
     "prettier": "prettier \"**/*.{json,md,scss,yaml,yml}\"",
     "test:other": "yarn prettier --list-different",
     "test:code": "eslint --ignore-path .gitignore --ext .js,.jsx .",
