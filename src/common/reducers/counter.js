@@ -12,7 +12,7 @@ export default {
 
   // thunks
   incrementIfOdd: thunk((actions, payload, { getState }) => {
-    const { count } = getState().count;
+    const { count } = getState();
     if (count % 2 === 0) {
       return;
     }

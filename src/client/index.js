@@ -10,6 +10,7 @@ const state = window.__PRELOADED_STATE__;
 delete window.__PRELOADED_STATE__;
 
 const store = configureStore(state);
+console.log(store.getState());
 // Load all components needed before rendering
 
 loadableReady().then(() => {

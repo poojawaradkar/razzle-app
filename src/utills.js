@@ -49,6 +49,7 @@ const loadRouteData = (path, options = {}) => {
       }
       return new Promise(resolve => {
         const resolveCb = data => {
+          console.log(store.getState());
           resolve({
             ...data,
             routeData: matchedRoute,

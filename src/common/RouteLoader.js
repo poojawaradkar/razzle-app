@@ -58,7 +58,6 @@ class PendingDataLoader extends Component {
       // load data while the old screen remains
       loadRouteData(pathname).then(data => {
         console.log(data);
-        // const { routeData } = data[data.length - 1];
         // clear previousLocation so the next screen renders
         window.scrollTo(0, 0);
         this.setState({
