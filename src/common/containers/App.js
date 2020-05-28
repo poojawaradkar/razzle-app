@@ -20,8 +20,8 @@ const App = () => (
     <p>
       <Link to="/notfound">No match</Link>
     </p>
-    <RouteLoader>{renderRoutes(Routes)}</RouteLoader>
     <Navbar />
+    <RouteLoader>{renderRoutes(Routes)}</RouteLoader>
   </>
 );
 

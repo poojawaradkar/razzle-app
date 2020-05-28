@@ -1,8 +1,10 @@
 import { createStore } from 'easy-peasy';
 import reducers from '../reducers';
 
+let store = null;
+
 const configureStore = (preloadedState = {}) => {
-  const store = createStore(reducers, {
+  store = createStore(reducers, {
     initialState: preloadedState,
   });
 
@@ -17,5 +19,5 @@ const configureStore = (preloadedState = {}) => {
 
   return store;
 };
-
+export const getStore = () => store;
 export default configureStore;

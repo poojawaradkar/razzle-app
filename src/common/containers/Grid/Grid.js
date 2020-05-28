@@ -17,10 +17,7 @@ const Grid = props => {
   // const [loading, setLoading] = useState(true);
   // const [errorText, setErrorText] = useState(false);
   // const fetchPopularRepos = useStoreActions(actions => actions.articles.fetchPopularRepos);
-  const articles = useStoreState(state => {
-    console.log(state);
-    return state.articles.articles;
-  });
+  const articles = useStoreState(state => state.articles.articles);
   const {
     match: {
       params: { id: param },

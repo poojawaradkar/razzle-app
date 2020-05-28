@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { matchRoutes } from 'react-router-config';
-import createStore from './common/store/configureStore';
+import { getStore } from './common/store/configureStore';
 import Routes from './common/Routes';
 
 const usePrevious = value => {
@@ -17,7 +17,7 @@ const getMatchedRoutes = path => {
 };
 
 const loadRouteData = (path, options = {}) => {
-  const store = createStore();
+  const store = getStore();
   const routes = getMatchedRoutes(path);
   if (!routes.length) {
     if (__isBrowser__) {
@@ -49,7 +49,6 @@ const loadRouteData = (path, options = {}) => {
       }
       return new Promise(resolve => {
         const resolveCb = data => {
-          console.log(store.getState());
           resolve({
             ...data,
             routeData: matchedRoute,
