@@ -1,23 +1,23 @@
 import { createStore } from 'easy-peasy';
-import reducers from '../reducers';
+import models from '../models';
 
 let store = null;
 
 const configureStore = (preloadedState = {}) => {
-  store = createStore(reducers, {
+  store = createStore(models, {
     initialState: preloadedState,
   });
 
   if (module.hot) {
-    // Enable Webpack hot module replacement for reducers
-    module.hot.accept('../reducers', () => {
-      const nextRootReducer = require('../reducers').default;
-      // store.replaceReducer(nextRootReducer);
-      store.reconfigure(nextRootReducer);
+    // Enable Webpack hot module replacement for models
+    module.hot.accept('../models', () => {
+      const nextRootModels = require('../models').default;
+      store.reconfigure(nextRootModels);
     });
   }
 
   return store;
 };
-export const getStore = () => store;
 export default configureStore;
+
+export const getStore = () => store;

@@ -1,8 +1,12 @@
 import { action, thunk } from 'easy-peasy';
+import fetchCounter from '../api/counter';
 
 export default {
   count: 0,
   // actions
+  set: action((state, count) => {
+    state.count = count;
+  }),
   increment: action(state => {
     state.count += 1;
   }),
@@ -22,4 +26,9 @@ export default {
   incrementAsync: thunk((actions, delay = 1000) => {
     setTimeout(() => actions.increment(), delay);
   }),
+  incrementAtRandom: thunk(async actions => {
+    const res = await fetchCounter();
+    console.log(res);
+    actions.set(res);
+  })
 };
