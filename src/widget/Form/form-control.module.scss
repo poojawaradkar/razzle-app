@@ -1,0 +1,64 @@
+@import "../../common/scss/_colors.scss";
+
+.form-control {
+  display: block;
+  width: 100%;
+  //height: calc(1.375rem + .75rem); // height + padding (T+B)
+  padding: 0.375rem 0.625rem;
+  font-size: 0.875rem;
+  font-weight: 400;
+  font-family: inherit;
+  line-height: 1.572;
+  color: $black;
+  background-color: #fff;
+  border: 1px solid $gray-lighter;
+  background-clip: padding-box;
+  border-radius: 0.25rem;
+  -webkit-transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  &:focus {
+    border-color: $gray-dark;
+    outline: 0;
+    &::-webkit-input-placeholder {
+      color: $disabled-btn;
+    }
+  }
+  &::-webkit-input-placeholder {
+    color: $placeholder;
+    font-family: inherit;
+  }
+  &:disabled {
+    background-color: #ecf1f5;
+    border: none;
+    opacity: 1;
+  }
+  &.lg {
+    height: calc(1.5em + 1rem + 2px);
+    padding: 0.5rem 1rem;
+    font-size: 1.25rem;
+  }
+  &.sm {
+    height: calc(1.5em + 0.5rem + 2px);
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+  }
+  &.valid {
+    border-color: $success;
+  }
+  &.invalid {
+    border-color: $error;
+  }
+  &.alert {
+    border-color: $alert;
+  }
+  &.read-only {
+    border: 0;
+    padding: 0;
+    height: auto;
+    line-height: 0.875rem;
+  }
+}
+.form-textarea {
+  resize: none;
+  min-height: 4.375rem;
+}

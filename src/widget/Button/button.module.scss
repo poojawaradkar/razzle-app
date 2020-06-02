@@ -1,0 +1,34 @@
+@import "../../common/scss/_colors.scss";
+
+.btn-style {
+  display: inline-flex;
+  display: -webkit-inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
+  vertical-align: middle;
+  user-select: none;
+  border: none;
+  outline: none;
+  padding: 0 1.75rem;
+  height: 2.125rem;
+  font-size: 0.875rem;
+  line-height: inherit;
+  cursor: pointer;
+  border-radius: 3.5rem;
+  font-family: Roboto;
+  &.btn-default {
+    color: $default-btn;
+    background-color: #ffffff;
+  }
+  &.btn-primary {
+    color: $primary-btn;
+    background-color: $primary-btn-bg;
+  }
+  &:disabled {
+    border: none;
+    pointer-events: none;
+    color: #9e9e9e;
+    background-color: #edf1f7;
+  }
+}

@@ -1,0 +1,22 @@
+@import "../../common/scss/_colors.scss";
+
+.feedback {
+  display: block;
+  width: 100%;
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+  color: $gray-dark;
+  text-align: left;
+  &.valid {
+    color: $success;
+  }
+  &.invalid {
+    color: $error;
+  }
+  &.alert {
+    color: $alert;
+  }
+  &.helper {
+    color: $helper;
+  }
+}

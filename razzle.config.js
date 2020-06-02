@@ -17,7 +17,7 @@ module.exports = {
         new LoadableWebpackPlugin({
           outputAsset: false,
           writeToDisk: { filename },
-        }),
+        })
       );
     }
     if (target === 'server') {
@@ -25,4 +25,5 @@ module.exports = {
     }
     return config;
   },
+  plugins: ['scss'],
 };

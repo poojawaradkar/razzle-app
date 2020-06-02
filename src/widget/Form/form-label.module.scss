@@ -1,0 +1,17 @@
+@import "../../common/scss/_colors.scss";
+
+.form-label {
+  display: inline-block;
+  font-size: 0.75rem;
+  color: #7a8994;
+  margin-bottom: 0.375rem;
+  &.valid {
+    color: $success;
+  }
+  &.invalid {
+    color: $error;
+  }
+  &.alert {
+    color: $alert;
+  }
+}

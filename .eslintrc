@@ -30,6 +30,7 @@
     "react/prefer-stateless-function": "warn",
     "react/destructuring-assignment": ["warn"],
     "react/prop-types": ["warn"],
+    "react/jsx-props-no-spreading": ["warn"],
     "jsx-a11y/label-has-for": "off",
     "jsx-a11y/anchor-is-valid": [
       "error",
