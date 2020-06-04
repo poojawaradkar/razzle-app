@@ -9,12 +9,6 @@ const Home = () => (
       Welcome to Razzle.
     </div>
     <p>
-      <Link to="/get-started">Get Started</Link>
-    </p>
-    <p>
-      <Link to="/login">Login</Link>
-    </p>
-    <p>
       <Link to="/about">About us</Link>
     </p>
     <p>

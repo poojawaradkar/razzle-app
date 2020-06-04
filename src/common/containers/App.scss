@@ -7,7 +7,9 @@ body {
   font-weight: 400;
   margin: 0;
 }
-* {
+*,
+:after,
+:before {
   box-sizing: border-box;
 }
 .react-root {

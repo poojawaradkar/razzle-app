@@ -12,10 +12,12 @@ const propTypes = {
    */
   // validated: PropTypes.bool,
   as: PropTypes.elementType,
+  className: PropTypes.string
 };
 
 const defaultProps = {
-  as: 'form'
+  as: 'form',
+  className: ''
 };
 
 const Form = React.forwardRef(
